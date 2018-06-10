@@ -1,0 +1,28 @@
+{
+  "name": "birdfeed",
+  "version": "1.0.0",
+  "description": "Presents Twitter user timelines and search results in Atom format.",
+  "engines": {
+    "node": "^10.0.0",
+    "npm": "^6.0.0"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "watch": "nodemon --inspect src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.17.5",
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3",
+    "html-entities": "^1.2.1",
+    "moment": "^2.22.2",
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5"
+  }
+}
