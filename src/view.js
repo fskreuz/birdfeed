@@ -12,7 +12,7 @@ exports.view = feed =>
         n('id', {}, entry.id),
         n('updated', {}, entry.updated),
         n('link', { rel: 'alternate', type: 'text/html', href: entry.id }),
-        n('link', { rel: 'enclosure', type: 'image/jpeg', href: entry.avatar }),
+        n('link', { rel: 'enclosure', type: 'image/jpeg', href: entry.poster }),
         n('title', {}, entry.title),
         n('summary', {}, entry.summary),
         n('author', {},

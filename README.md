@@ -26,9 +26,9 @@ Deploy to any Node-capable service and run `npm start`.
 
 ## Technical details
 
-The app does NOT use the Twitter API and does NOT require any API key.  Instead, it _screenscrapes_ the publicly-available, no-JS version of `mobile.twitter.com`. And due to how `mobile.twitter.com` is rendered, there are a few limitations to the generated feed:
+The app does NOT use the Twitter API and does NOT require any API key. Instead, it _screenscrapes_ the publicly-available, no-JS version of `twitter.com`. Due to how `twitter.com` is rendered, there are a few limitations to the generated feed:
 
-- Only public profiles will have entries. Private profiles will return an empty feed.
-- Tweets are copied as rendered in the timeline.
-- Embedded media is not available.
-- Time accuracy is only accurate to the day.
+- Private profiles will return an empty feed.
+- Tweets are copied as rendered on the timeline/search results.
+- Only static images are used as preview images.
+- GIFs only show first frame. Twitter only renders posters for GIFs.
