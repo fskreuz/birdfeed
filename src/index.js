@@ -5,6 +5,8 @@ const { extract } = require('./extract')
 const { view } = require('./view')
 const { render } = require('./render')
 
+const port = process.env.PORT || 3000
+
 const welcome = `
 # Welcome to Birdfeed! ( ^-^)b
 
@@ -39,4 +41,4 @@ express()
   .get('/s/:query', responder(params => `${twitter}/search/${params.query}`))
   .get('/', welcomeResponder)
   .get('*', (req, res) => res.sendStatus(404))
-  .listen(3000, () => console.log('Aaand we have liftoff!  ( ^-^)b'))
+  .listen(port, () => console.log('Aaand we have liftoff!  ( ^-^)b'))
