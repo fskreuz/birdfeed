@@ -46,14 +46,6 @@ exports.extract = html => {
           : quoteName ? `${name} Quoted ${quoteName}`
             : `${name} Tweeted`
 
-    // A tweet can contain hidden markup for quoted content which we don't need.
-    const tweet = $('.js-tweet-text', e).contents()
-      .not('.u-hidden')
-      .map((i, e) => $(e).text())
-      .get()
-      .join(' ')
-    const summary = text(tweet)
-
     // Cheerio bug where doing css on empty collection throws instead of
     // returning undefined.
     let gif = ''
@@ -68,6 +60,14 @@ exports.extract = html => {
       .attr('src')
       .replace('_bigger', '_400x400')
     const poster = url(gif || jpeg || avatar)
+
+    // A tweet can contain hidden markup for quoted content which we don't need.
+    const tweet = $('.js-tweet-text', e).contents()
+      .not('.u-hidden')
+      .map((i, e) => $(e).text())
+      .get()
+      .join(' ')
+    const summary = `<img src="${poster}"><p>${text(tweet)}</p>`
 
     return { id, title, summary, updated, poster, author: { name, uri } }
   }).get()

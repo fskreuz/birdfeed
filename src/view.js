@@ -14,7 +14,7 @@ exports.view = feed =>
         n('link', { rel: 'alternate', type: 'text/html', href: entry.id }),
         n('link', { rel: 'enclosure', type: 'image/jpeg', href: entry.poster }),
         n('title', {}, entry.title),
-        n('summary', {}, entry.summary),
+        n('summary', { type: 'html' }, entry.summary),
         n('author', {},
           n('name', {}, entry.author.name),
           n('uri', {}, entry.author.uri)))))
